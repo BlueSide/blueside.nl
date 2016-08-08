@@ -1,0 +1,120 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+// Variables
+// ========================================================================
+
+//
+// Badge
+//
+
+@badge-color:                                   @global-contrast-color;
+@badge-danger-background:                       @global-success-background;
+
+
+// Additional style fixes
+// ========================================================================
+
+/* Button and link color overrides */
+
+.woocommerce,
+.woocommerce-page {
+
+    .woocommerce-message,
+    .woocommerce-error,
+    .woocommerce-info {
+
+        // Link Color
+        a {
+            color: fade(@global-contrast-color, 80%);
+            text-decoration: underline;
+        }
+
+        a:hover { color: @global-contrast-color; }
+
+        // Button Style
+        .button {
+
+            background: fade(@global-contrast-color, 80%);
+            color: @global-color;
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                background: @global-contrast-color;
+                color: darken(@global-color, 15%);
+            }
+
+        }
+
+        .button:active {
+            background: fade(@global-contrast-color, 90%);
+            color: darken(@global-color, 15%);
+        }
+
+    }
+
+    // Filter widget color override
+    .widget_layered_nav_filters ul li a { color: @global-color; }
+
+    // Reseting the line-height
+    form {
+
+        .form-row {
+
+            input.input-text,
+            textarea { line-height: @form-height; }
+
+        }
+
+    }
+
+    // Price Filter
+    .widget_price_filter {
+
+        .ui-slider .ui-slider-handle { top: -.15em; }
+
+    }
+
+    // Filter tags
+    .widget_layered_nav_filters {
+
+        ul {
+
+            li {
+
+                a { color: @badge-color !important; }
+
+            }
+
+        }
+
+    }
+
+    // Product Loops
+    ul.products {
+
+        li.product { width: 50%; }
+
+    }
+
+    .quantity,
+    #content .quantity {
+
+        input.qty { width: 90px; }
+
+    }
+
+    // Product search in 'uk-panel-box-secondary'
+    .uk-panel-box-secondary.widget_product_search {
+
+        input[type="search"] {
+
+            background: darken(@form-background, 3%);
+
+            &:focus { background: darken(@form-background, 5%); }
+
+        }
+
+    }
+
+}
