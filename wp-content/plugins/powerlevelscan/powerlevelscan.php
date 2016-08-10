@@ -23,6 +23,17 @@
  * f - float
  **/				     
 
+/*
+Script to set the width of all bs-progress-bar elements
+
+var amountOfElements = document.getElementsByClassName("bs-progress-bar").length;
+for(var i = 0; i < amountOfElements; i++)
+{
+	document.getElementsByClassName("bs-progress-bar")[i].setAttribute("style", "width: " + document.getElementsByClassName("bs-progress-bar")[i].innerHTML + "%");
+}
+
+ */
+
 
 include_once("debukzh.php");
 require_once("pls_Scan.php");
@@ -71,7 +82,6 @@ function pls_renderBoolean($value)
 function pls_renderProgressbar($value)
 {
     // TODO: add JS script to set the width and color
-    $value.'<script>alert("test")</script>';
     return str_replace('#VALUE#', $value, get_option('progressbar'));
 }
 // Initialze
