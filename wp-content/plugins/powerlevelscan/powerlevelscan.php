@@ -35,7 +35,7 @@ function pls_handler($attr)
 {
     global $wpdb;
     $output;
-    // SELECT type FROM bs_powerlevelscan WHERE id=992
+  
     // Get data
     $result = $wpdb->get_row(
 	'SELECT `'.$attr['type'].'` FROM `'.PLS_DATA_TABLE.'` WHERE `id` = '.get_the_ID(),

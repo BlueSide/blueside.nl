@@ -1,11 +1,23 @@
 <?php
 /*
   Plugin Name: Debukzh
-  Plugin URI: http://cikzh.com
-  Version: 0.0.1
+  Plugin URI: http://www.blueside.nl
+  Version: 0.0.2
   Author: Cikzh
   Description: Collection of debug tools for internal development. To be disabled when shipping the website
 */
+
+// Check the backtrace of deprecated function warnings
+add_action ( 'deprecated_function_run', 'bs_deprecated_function_backtrace', 10, 3);
+function bs_deprecated_function_backtrace($function, $replacement, $version)
+{
+    if(WP_DEBUG)
+    {
+        echo '<pre>';trigger_error(print_r(debug_backtrace(), TRUE)); echo '</pre>';
+    }
+}
+
+
 ?>
 <html>
 <head>
