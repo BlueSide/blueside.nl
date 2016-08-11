@@ -110,7 +110,7 @@ function pls_settings_page()
 	<?php
 	global $scans;
 	//TODO: come up with a better check
-	if(isset($_POST['site-title']))
+    if(isset($_POST['title']))
 	{
 	    pls_insertPost();
 	}
@@ -127,17 +127,7 @@ function pls_settings_page()
 		<table class="form-table">
 		    <tr valign="top">
 			<th scope="row">Site title</th>
-			<td><input type="text" name="site_title" size="60" /></td>
-		    </tr>
-		    
-		    <tr valign="top">
-			<th scope="row">URL</th>
-			<td><input type="text" name="url" size="60" /></td>
-		    </tr>
-		    
-		    <tr valign="top">
-			<th scope="row">Boolean Test</th>
-			<td><input type="checkbox" name="boolean_test" size="60" /></td>
+			<td><input type="text" name="title" size="60" /></td>
 		    </tr>
 		    
 		    <?php
@@ -213,7 +203,7 @@ function pls_insertPost()
     global $wpdb;
     global $scans;
     
-    $title = $_POST['site-title'];
+    $title = $_POST['title'];
     
     $postData = array(
         'ID' => $postID,
@@ -237,18 +227,19 @@ function pls_insertPost()
                       );
 
     $postID = wp_insert_post($postData);
-
+    
     if($postID != 0)
     {
-        $data = ['id' => $postID];
-        $format = [];
-	
+        $data = ['id' => $postID, 'title' => $title];
+        $format = ['%d', '%s'];
+        
         foreach($scans->fields as $field)
         {
-            $data[$field['name']] = 'test';
+            $data[$field['name']] = pls_getData($field['name'], $field['format']);
             $format[] = $field['format'];
         }
-
+        
+        var_dump($data);
         // Create new row in bs_powerlevelscan
         if(!$wpdb->insert(PLS_DATA_TABLE, $data, $format))
         {
