@@ -3,20 +3,13 @@ class Scans
 {
     
     public $fields = [];
-    public $foo = 'bar';
 
     function __construct()
-    {        
-        global $wpdb;
-        $result = $wpdb->get_results('SELECT * FROM `bs_powerlevelscan_settings`', ARRAY_A);
-
-        foreach($result as $field)
-        {
-            $this->fields[] = $field;
-        }
+    {
+        $this->getFields();
     }
     
-    function addField($name, $format)
+    public function addField($name, $format)
     {
         global $wpdb;
 
@@ -67,6 +60,20 @@ class Scans
             }
 
             $wpdb->query('ALTER TABLE '.PLS_DATA_TABLE.' ADD `'.$name.'` '.$data_type);
+        }
+    }
+
+    public function getFields()
+    {
+        global $wpdb;
+
+        // Clear old values first
+        $this->fields = [];
+        
+        $result = $wpdb->get_results('SELECT * FROM `'.PLS_FIELDS_TABLE.'`', ARRAY_A);
+        foreach($result as $field)
+        {
+            $this->fields[] = $field;
         }
     }
 }

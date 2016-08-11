@@ -108,6 +108,7 @@ function pls_settings_page()
 ?>
     <div class="wrap">
 	<?php
+	global $scans;
 	//TODO: come up with a better check
 	if(isset($_POST['site-title']))
 	{
@@ -115,30 +116,67 @@ function pls_settings_page()
 	}
 	if(isset($_POST['scan_element_name']) && isset($_POST['scan_element_format']))
 	{
-        global $scans;
 	    $scans->addField($_POST['scan_element_name'], $_POST['scan_element_format']);
+	    $scans->getFields();
 	}
 	?>
 	<div style="margin-top: 30px">
 	    <h1>Create new Power Level Scan</h1>
 	    <h2>Create Scan</h2>
-	    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?page=pls_settings"); ?>" >
-		<p>Site title:<input type="text" name="site-title" /></p>
-		<p><input type="checkbox" name="bSitemapPresent" />Sitemap present?</p>
-		<p>URL:<input type="text" name="url" /></p>
-		<p>test<input type="text" name="test" /></p>
+	    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'].'?page=pls_settings'); ?>" >
+		<table class="form-table">
+		    <tr valign="top">
+			<th scope="row">Site title</th>
+			<td><input type="text" name="site_title" size="60" /></td>
+		    </tr>
+		    
+		    <tr valign="top">
+			<th scope="row">URL</th>
+			<td><input type="text" name="url" size="60" /></td>
+		    </tr>
+		    
+		    <tr valign="top">
+			<th scope="row">Boolean Test</th>
+			<td><input type="checkbox" name="boolean_test" size="60" /></td>
+		    </tr>
+		    
+		    <?php
+		    foreach($scans->fields as $field)
+		    {
+			// Map format to input type
+			$input_type;
+			switch($field['format'])
+			{
+			    case '%d':
+			    case '$f':
+			    case '%s':
+			    $input_type = 'text';
+			    break;
+
+			    case '%b':
+			    $input_type = 'checkbox';
+			    break;
+			}
+			echo '<tr valign="top">';
+			//TODO: Make prettier names
+			echo '<th scope="row">'.$field['name'].'</th>';
+			echo '<td><input type="'.$input_type.'" name="'.$field['name'].'"</td>';
+			echo '</tr>';
+		    }
+		    ?>
+		</table>
 		<input class="button button-primary" name="Submit" type="submit" value="Create Scan" />
 	    </form>
 	    <h2>Add Scan method</h2>
 	    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?page=pls_settings"); ?>" >
 		<p>Name<input type="text" name="scan_element_name" /></p>
 		<p>Format<select name="scan_element_format">
-  <option value="%s">Text</option>
-  <option value="%d">Number</option>
-  <option value="%b">Boolean</option>
-  <option value="%f">Decimal</option>
-</select></p>
-		<input class="button button-primary" name="Submit" type="submit" value="Create Scan" />
+		    <option value="%s">Text</option>
+		    <option value="%d">Number</option>
+		    <option value="%b">Boolean</option>
+		    <option value="%f">Decimal</option>
+		</select></p>
+		<input class="button button-primary" name="Submit" type="submit" value="Add field" />
 	    </form>
 	</div>
 	<h1>Global Power Level Scan settings</h1>
@@ -175,8 +213,6 @@ function pls_insertPost()
     global $wpdb;
     global $scans;
     
-    $currentUser = wp_get_current_user();
-    $author = get_current_user_id();
     $title = $_POST['site-title'];
     
     $postData = array(
