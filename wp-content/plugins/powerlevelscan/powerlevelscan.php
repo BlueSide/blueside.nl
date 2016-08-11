@@ -13,33 +13,31 @@
 
 /** 
  * NOTE: 
- * The awesome WordPress database wrapper returns only string values from SELECT queries.
- * For that reason all columns in the bs_powerlevelscan are prefixed with a datatype
- * so we know what datatype the column was
+ * - Find a good method for including our JS piece. Checkout wp_enqueue_script
+ * - checkout wp_die() for error messages
  * 
- * i - integer
- * s - string
- * b - boolean
- * f - float
+ * 
+ * 
+ * 
+ * 
  **/				     
 
-/*
-Script to set the width of all bs-progress-bar elements
-
-var amountOfElements = document.getElementsByClassName("bs-progress-bar").length;
-for(var i = 0; i < amountOfElements; i++)
-{
-	document.getElementsByClassName("bs-progress-bar")[i].setAttribute("style", "width: " + document.getElementsByClassName("bs-progress-bar")[i].innerHTML + "%");
-}
-
- */
-
+/**
+ * Script to set the width of all bs-progress-bar elements
+ * 
+ * var amountOfElements = document.getElementsByClassName("bs-progress-bar").length;
+ * for(var i = 0; i < amountOfElements; i++)
+ * {
+ * 	document.getElementsByClassName("bs-progress-bar")[i].setAttribute("style", "width: " + document.getElementsByClassName("bs-progress-bar")[i].innerHTML + "%");
+ * }
+ **/
 
 include_once("debukzh.php");
 require_once("pls_Scan.php");
 
 define('PLS_DATA_TABLE', 'bs_powerlevelscan');
 define('PLS_FIELDS_TABLE', 'bs_powerlevelscan_fields');
+
 
 $scans = new Scans();
 
@@ -128,6 +126,11 @@ function pls_settings_page()
 		    <tr valign="top">
 			<th scope="row">Site title</th>
 			<td><input type="text" name="title" size="60" /></td>
+		    </tr>
+		    
+		    <tr valign="top">
+			<th scope="row">URL</th>
+			<td><input type="text" name="url" size="60" /></td>
 		    </tr>
 		    
 		    <?php
