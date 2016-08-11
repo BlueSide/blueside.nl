@@ -23,9 +23,19 @@
  * f - float
  **/				     
 
+/*
+Script to set the width of all bs-progress-bar elements
+
+var amountOfElements = document.getElementsByClassName("bs-progress-bar").length;
+for(var i = 0; i < amountOfElements; i++)
+{
+	document.getElementsByClassName("bs-progress-bar")[i].setAttribute("style", "width: " + document.getElementsByClassName("bs-progress-bar")[i].innerHTML + "%");
+}
+
+ */
+
 
 include_once("debukzh.php");
-require_once("pls_functions.php");
 require_once("pls_Scan.php");
 
 define('PLS_DATA_TABLE', 'bs_powerlevelscans');
@@ -53,8 +63,8 @@ function pls_handler($attr)
 	break;
 	case 'wheel':
 	break;
-	case 'slider':
-	$output = pls_renderSlider($result[$attr['type']]);
+	case 'progressbar':
+	$output = pls_renderProgressbar($result[$attr['type']]);
 	break;
 	default:
 	$output = $result[$attr['type']];
@@ -69,10 +79,10 @@ function pls_renderBoolean($value)
     return $value ? get_option('icon_true') : get_option('icon_false');
 }
 
-function pls_renderSlider($value)
+function pls_renderProgressbar($value)
 {
-    // TODO: add JS script to set the width
-    return str_replace('#VALUE#', $value, get_option('slider'));
+    // TODO: add JS script to set the width and color
+    return str_replace('#VALUE#', $value, get_option('progressbar'));
 }
 // Initialze
 add_action("admin_menu", "pls_admin_add_page");
@@ -88,7 +98,7 @@ function register_global_pls_settings()
     //register our settings
     register_setting( 'pls_global_settings', 'icon_true' );
     register_setting( 'pls_global_settings', 'icon_false' );
-    register_setting( 'pls_global_settings', 'slider' );
+    register_setting( 'pls_global_settings', 'progressbar' );
 }
 
 function pls_settings_page()
@@ -140,8 +150,8 @@ function pls_settings_page()
 		</tr>
 		
 		<tr valign="top">
-		    <th scope="row">Slider</th>
-		    <td><input type="text" name="slider" value="<?php echo esc_attr( get_option('slider') ); ?>" size="60" /></td>
+		    <th scope="row">Progressbar</th>
+		    <td><input type="text" name="progressbar" value="<?php echo esc_attr( get_option('progressbar') ); ?>" size="60" /></td>
 		</tr>
 	    </table>
 	    
