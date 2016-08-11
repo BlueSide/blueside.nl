@@ -38,8 +38,10 @@ for(var i = 0; i < amountOfElements; i++)
 include_once("debukzh.php");
 require_once("pls_Scan.php");
 
-define('PLS_DATA_TABLE', 'bs_powerlevelscans');
-define('PLS_SETTINGS_TABLE', 'bs_powerlevelscan_settings');
+define('PLS_DATA_TABLE', 'bs_powerlevelscan');
+define('PLS_FIELDS_TABLE', 'bs_powerlevelscan_fields');
+
+$scans = new Scans();
 
 function pls_handler($attr)
 {
@@ -48,26 +50,26 @@ function pls_handler($attr)
   
     // Get data
     $result = $wpdb->get_row(
-	'SELECT `'.$attr['type'].'` FROM `'.PLS_DATA_TABLE.'` WHERE `id` = '.get_the_ID(),
-	ARRAY_A
-    );
+        'SELECT `'.$attr['type'].'` FROM `'.PLS_DATA_TABLE.'` WHERE `id` = '.get_the_ID(),
+        ARRAY_A
+                             );
     
     // Get representation type
     switch($attr['out'])
     {
-	case 'text':
-	$output = $result[$attr['type']];
-	break;
-	case 'boolean':
-	$output = pls_renderBoolean($result[$attr['type']]);
-	break;
-	case 'wheel':
-	break;
-	case 'progressbar':
-	$output = pls_renderProgressbar($result[$attr['type']]);
-	break;
-	default:
-	$output = $result[$attr['type']];
+        case 'text':
+            $output = $result[$attr['type']];
+            break;
+        case 'boolean':
+            $output = pls_renderBoolean($result[$attr['type']]);
+            break;
+        case 'wheel':
+            break;
+        case 'progressbar':
+            $output = pls_renderProgressbar($result[$attr['type']]);
+            break;
+        default:
+            $output = $result[$attr['type']];
     }
     
     return $output;
@@ -113,7 +115,8 @@ function pls_settings_page()
 	}
 	if(isset($_POST['scan_element_name']) && isset($_POST['scan_element_format']))
 	{
-	    //
+        global $scans;
+	    $scans->addField($_POST['scan_element_name'], $_POST['scan_element_format']);
 	}
 	?>
 	<div style="margin-top: 30px">
@@ -129,7 +132,12 @@ function pls_settings_page()
 	    <h2>Add Scan method</h2>
 	    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?page=pls_settings"); ?>" >
 		<p>Name<input type="text" name="scan_element_name" /></p>
-		<p>Format<input type="text" name="scan_element_format" /></p>
+		<p>Format<select name="scan_element_format">
+  <option value="%s">Text</option>
+  <option value="%d">Number</option>
+  <option value="%b">Boolean</option>
+  <option value="%f">Decimal</option>
+</select></p>
 		<input class="button button-primary" name="Submit" type="submit" value="Create Scan" />
 	    </form>
 	</div>
@@ -165,8 +173,7 @@ function pls_settings_page()
 function pls_insertPost()
 {
     global $wpdb;
-    $scans = new Scans();
-    $scans->addField('test', '%s');
+    global $scans;
     
     $currentUser = wp_get_current_user();
     $author = get_current_user_id();
@@ -191,27 +198,26 @@ function pls_insertPost()
         'guid' => '',
         'import_id' => 0,
         'context' => '',
-    );
+                      );
 
     $postID = wp_insert_post($postData);
 
     if($postID != 0)
     {
-	$data = ['id' => $postID];
-	$format = [];
+        $data = ['id' => $postID];
+        $format = [];
 	
-	foreach($scans->fields as $field)
-	{
-	    $data[$field['name']] = 'test';
-	    $format[] = $field['format'];
-	}
-	var_dump($format);
+        foreach($scans->fields as $field)
+        {
+            $data[$field['name']] = 'test';
+            $format[] = $field['format'];
+        }
 
         // Create new row in bs_powerlevelscan
         if(!$wpdb->insert(PLS_DATA_TABLE, $data, $format))
-	{
-	    echo $wpdb->last_error;
-	}	
+        {
+            echo $wpdb->last_error;
+        }	
     }
     else
     {
@@ -225,11 +231,11 @@ function pls_getData($field_name, $format)
     $result;
     if($format == '%b')
     {
-	$result = isset($_POST[$field_name]);
+        $result = isset($_POST[$field_name]);
     }
     else
     {
-	$result = $_POST[$field_name];
+        $result = $_POST[$field_name];
     }
     
     return $result;
