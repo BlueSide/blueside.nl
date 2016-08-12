@@ -1,4 +1,6 @@
 <?php
+include( plugin_dir_path( __FILE__ ) . '../templates/graphic_types.php');
+
 if(!class_exists('Post_Type_Template'))
 {
 	/**
@@ -38,9 +40,26 @@ if(!class_exists('Post_Type_Template'))
 
         function bs_pls_handler($attr)
         {
-            //$value = get_post_meta(get_the_id(), $attr['scan'])[0];
-            //$type = $attr['type'];
-            return '<i class="uk-icon-check"></i>';//$return_string;
+            $value = get_post_meta(get_the_id(), $attr['scan'])[0];
+            
+            switch($attr['type'])
+            {
+                case 'text':
+                    $output = $value;
+                    break;
+                case 'boolean':
+                    $output = $value ? get_option("icon_true") : get_option("icon_false");
+                    break;
+                case 'wheel':
+                    break;
+                case 'progress-bar':
+                    $output = pls_renderProgressBar($value);
+                    break;
+                default:
+                    $output = $value;
+            }
+            //var_dump( $output);
+            return $output;
         }
         
     	/**
