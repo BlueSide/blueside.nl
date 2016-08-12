@@ -11,9 +11,9 @@ body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-at
 body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) [class*='tm-logo'] svg .st3 { fill: #ffffff; }
 
 [class*='tm-logo'] svg .st0 { fill: #17252D; }
-[class*='tm-logo'] svg .st1 { fill: #00AFDB; }
+[class*='tm-logo'] svg .st1 { fill: #00A1D4; }
 [class*='tm-logo'] svg .st2 { fill: #ffffff; }
-[class*='tm-logo'] svg .st3 { fill: #00AFDB; }
+[class*='tm-logo'] svg .st3 { fill: #00A1D4; }
 
 /* Background overrides for header and bottom-d */
 .tm-block-header.tm-contrast div.tm-block-texture,
@@ -103,14 +103,14 @@ i.uk-icon-close {
     color: #FF283C;
 }
 body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) .uk-navbar-nav > li:hover > a, body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) .uk-navbar-nav > li > a:focus, body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) .uk-navbar-nav > li.uk-open > a {
-    color: #00AFDB;
+    color: #00A1D4;
 }
 body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) .uk-navbar-nav > li:hover > a::before, body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) .uk-navbar-nav > li > a:focus::before, body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) .uk-navbar-nav > li.uk-open > a::before {
-    background: #00AFDB;
+    background: #00A1D4;
 }
 .uk-navbar-nav > li:hover > a, .uk-navbar-nav > li > a:focus, .uk-navbar-nav > li.uk-open > a {
     background-color: rgba(0, 0, 0, 0);
-    color: #00AFDB;
+    color: #00A1D4;
     outline: none;
     position: relative;
     z-index: 1;
@@ -126,7 +126,7 @@ body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-at
     margin-bottom: -25px;
 }
 .uk-dotnav-contrast > .uk-active > * {
-    background: #00AFDB;
+    background: #00A1D4;
     border-color: #ffffff;
 }
 .tm-contrast p{
@@ -151,7 +151,7 @@ body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-at
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0);
 }
 .uk-panel-box-primary {
-    background-color: #00AFDB;
+    background-color: #00A1D4;
     color: #ffffff;
     border-color: #2196f3;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0);
@@ -203,7 +203,7 @@ body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-at
     background-image: linear-gradient(to right, #00A1D4, #00A1D4);
 }
 .uk-navbar-nav > li:hover > a::before, .uk-navbar-nav > li > a:focus::before, .uk-navbar-nav > li.uk-open > a::before {
-    background: #00afdb;
+    background: #00a1d4;
 }
 a, .uk-link {
     text-decoration: none;
@@ -224,7 +224,7 @@ a, .uk-link {
     color: #888888;
 }
 a.altkleur {
-    color: #00afdb;
+    color: #00a1d4;
 }
 .tm-block-texture {
     position: relative;
@@ -336,7 +336,7 @@ a, .uk-link {
     color: #00A1D4;
 }
 ::selection {
-    background: #01afdb;
+    background: #01a1d4;
 }
 
 @media (min-width: 767px){
@@ -351,7 +351,7 @@ a, .uk-link {
 }
 
 .uk-button:hover, .uk-button:focus {
-    background-color: #01afdb;
+    background-color: #01a1d4;
 }
 
 @media only screen 
@@ -388,6 +388,6 @@ a.wittelink {
     height: 90vh;
 }
 .uk-button-primary {
-    background-image: -webkit-linear-gradient(top, #00afdb, #00afdb);
-    background-image: linear-gradient(to bottom, #00afdb, #00afdb);
+    background-image: -webkit-linear-gradient(top, #00a1d4, #00a1d4);
+    background-image: linear-gradient(to bottom, #00a1d4, #00a1d4);
 }
