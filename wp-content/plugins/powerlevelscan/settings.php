@@ -21,7 +21,8 @@ if(!class_exists('PLS_Settings'))
         	// register your plugin's settings
         	register_setting('power_level_scan-group', 'icon_true');
         	register_setting('power_level_scan-group', 'icon_false');
-
+            register_setting('power_level_scan-group', 'progress_bar');
+            
         	// add your settings section
         	add_settings_section(
         	    'power_level_scan-section', 
@@ -49,6 +50,16 @@ if(!class_exists('PLS_Settings'))
                 'power_level_scan-section',
                 array(
                     'field' => 'icon_false'
+                )
+            );
+            add_settings_field(
+                'power_level_scan-progress_bar', 
+                'Progress Bar', 
+                array(&$this, 'settings_field_input_text'), 
+                'power_level_scan', 
+                'power_level_scan-section',
+                array(
+                    'field' => 'progress_bar'
                 )
             );
             // Possibly do additional admin_init tasks
