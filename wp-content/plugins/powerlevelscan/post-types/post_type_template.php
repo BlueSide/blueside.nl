@@ -1,5 +1,4 @@
 <?php
-include( plugin_dir_path( __FILE__ ) . '../templates/graphic_types.php');
 
 if(!class_exists('Post_Type_Template'))
 {
