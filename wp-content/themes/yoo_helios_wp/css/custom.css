@@ -185,17 +185,6 @@ a.wittelink:hover {
 text-decoration: none;
 }
 
-
-#cikzh-logo
-{
-    color: red;
-}
-
-#cikzh-logo-negative
-{
-    color: aqua;
-}
-
 body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) {
     color: #ffffff !important;
     font-weight: bold;
