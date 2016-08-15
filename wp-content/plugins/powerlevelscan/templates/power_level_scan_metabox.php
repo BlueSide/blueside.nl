@@ -4,7 +4,7 @@
             <label for="scaled_images">Gebruik geschaalde afbeeldingen</label>
         </th>
         <td>
-            <input data-cat="performance" type="number" min="1" max="100" id="scaled_images" name="scaled_images" value="<?php echo @get_post_meta($post->ID, 'scaled_images', true); ?>" />
+            <input type="number" min="1" max="100" id="scaled_images" name="scaled_images" value="<?php echo @get_post_meta($post->ID, 'scaled_images', true); ?>" />
         </td>
     </tr>
     
@@ -13,7 +13,7 @@
             <label for="optimized_images">Gebruik geoptimaliseerde afbeeldingen</label>
         </th>
         <td>
-            <input data-cat="performance" type="number" min="1" max="100" id="optimized_images" name="optimized_images" value="<?php echo @get_post_meta($post->ID, 'optimized_images', true); ?>" />
+            <input type="number" min="1" max="100" id="optimized_images" name="optimized_images" value="<?php echo @get_post_meta($post->ID, 'optimized_images', true); ?>" />
         </td>
     </tr>
     <tr valign="top">
@@ -21,7 +21,7 @@
             <label for="image_resolution">Specificeer de afmetingen van afbeeldingen</label>
         </th>
         <td>
-            <input data-cat="performance" type="number" min="1" max="100" id="image_resolution" name="image_resolution" value="<?php echo @get_post_meta($post->ID, 'image_resolution', true); ?>" />
+            <input type="number" min="1" max="100" id="image_resolution" name="image_resolution" value="<?php echo @get_post_meta($post->ID, 'image_resolution', true); ?>" />
         </td>
     </tr>
     
@@ -30,7 +30,7 @@
             <label for="minify_css">Minificeer CSS</label>
         </th>
         <td>
-            <input data-cat="performance" type="number" min="1" max="100" id="minify_css" name="minify_css" value="<?php echo @get_post_meta($post->ID, 'minify_css', true); ?>" />
+            <input type="number" min="1" max="100" id="minify_css" name="minify_css" value="<?php echo @get_post_meta($post->ID, 'minify_css', true); ?>" />
         </td>
     </tr>
 
@@ -39,7 +39,7 @@
             <label for="minify_html">Minificeer HTML</label>
         </th>
         <td>
-            <input data-cat="performance" type="number" min="1" max="100" id="minify_html" name="minify_html" value="<?php echo @get_post_meta($post->ID, 'minify_html', true); ?>" />
+            <input type="number" min="1" max="100" id="minify_html" name="minify_html" value="<?php echo @get_post_meta($post->ID, 'minify_html', true); ?>" />
         </td>
     </tr>
 
@@ -48,7 +48,7 @@
             <label for="minify_javascript">Minificeer Javascript</label>
         </th>
         <td>
-            <input data-cat="performance" type="number" min="1" max="100" id="minify_javascript" name="minify_javascript" value="<?php echo @get_post_meta($post->ID, 'minify_javascript', true); ?>" />
+            <input type="number" min="1" max="100" id="minify_javascript" name="minify_javascript" value="<?php echo @get_post_meta($post->ID, 'minify_javascript', true); ?>" />
         </td>
     </tr>
 
@@ -57,7 +57,7 @@
             <label for="parsing_javascript">Stel het parsen van Javascript uit</label>
         </th>
         <td>
-            <input data-cat="usability" type="number" min="1" max="100" id="parsing_javascript" name="parsing_javascript" value="<?php echo @get_post_meta($post->ID, 'parsing_javascript', true); ?>" />
+            <input type="number" min="1" max="100" id="parsing_javascript" name="parsing_javascript" value="<?php echo @get_post_meta($post->ID, 'parsing_javascript', true); ?>" />
         </td>
     </tr>
 
@@ -66,7 +66,7 @@
             <label for="query_strings">Verwijder query strings uit vaste bronnen</label>
         </th>
         <td>
-            <input data-cat="usability"type="number" min="1" max="100" id="query_strings" name="query_strings" value="<?php echo @get_post_meta($post->ID, 'query_strings', true); ?>" />
+            <input type="number" min="1" max="100" id="query_strings" name="query_strings" value="<?php echo @get_post_meta($post->ID, 'query_strings', true); ?>" />
         </td>
     </tr>
 
@@ -75,7 +75,7 @@
             <label for="scripts_styles_order">Laad scripts en styles op de goede volgorde in</label>
         </th>
         <td>
-            <input data-cat="usability" type="number" min="1" max="100" id="scripts_styles_order" name="scripts_styles_order" value="<?php echo @get_post_meta($post->ID, 'scripts_styles_order', true); ?>" />
+            <input type="number" min="1" max="100" id="scripts_styles_order" name="scripts_styles_order" value="<?php echo @get_post_meta($post->ID, 'scripts_styles_order', true); ?>" />
         </td>
     </tr>
 
@@ -84,7 +84,7 @@
             <label for="CSS_import">Voorkomt CSS @import</label>
         </th>
         <td>
-            <input data-cat="usability" type="number" min="1" max="100" id="CSS_import" name="CSS_import" value="<?php echo @get_post_meta($post->ID, 'CSS_import', true); ?>" />
+            <input type="number" min="1" max="100" id="CSS_import" name="CSS_import" value="<?php echo @get_post_meta($post->ID, 'CSS_import', true); ?>" />
         </td>
     </tr>
 
