@@ -7,12 +7,39 @@ if(!class_exists('Post_Type_Template'))
      */
     class Post_Type_Template
     {
-        const POST_TYPE	= "power-level-scan";
+        const POST_TYPE	= "power_level_scan";
         private $_meta	= array(
-            'meta_a',
-            'meta_b',
-            'meta_c',
-            'meta_d',
+            scaled_images,
+            optimized_images,
+            image_resolution,
+            minify_css,
+            minify_html,
+            minify_javascript,
+            parsing_javascript,
+            query_strings,
+            scripts_styles_order,
+            CSS_import,
+            combine_css,
+            specify_cache,
+            configure_browsercache,
+            specify_charset,
+            bad_requests,
+            landingpage_redirects,
+            Gzip_compression,
+            keep_alive,
+            external_javascript,
+            redirects,
+            size_http_requests,
+            CSS_doc_head,
+            resources_consistent_url,
+            accept_encoding_header,
+            CSS_sprites,
+            load_asynchronous,
+            characterset_meta,
+            sitemap,
+            good_url,
+            good_h1headers,
+            good_404,
         );
 	
         /**
@@ -40,7 +67,14 @@ if(!class_exists('Post_Type_Template'))
 
         function bs_pls_handler($attr)
         {
-            $value = get_post_meta(get_the_id(), $attr['scan'], true);
+            if($attr['scan'] !== 'result')
+            {
+                $value = get_post_meta(get_the_id(), $attr['scan'], true);
+            }
+            else
+            {
+                $value = $this->pls_getCategoryScore($attr['cat']);
+            }
             
             switch($attr['type'])
             {
@@ -66,27 +100,33 @@ if(!class_exists('Post_Type_Template'))
         {
             return str_replace('#VALUE#', $value, get_option('progress_bar'));
         }
+
+        function pls_getCategoryScore($cat)
+        {
+            
+            return $result;
+        }
         
         /**
          * Create the post type
          */
         function create_post_type()
-               {
-                   register_post_type(self::POST_TYPE,
-                                      array(
-                                          'labels' => array(
-                                              'name' => __(sprintf('%ss', ucwords(str_replace("_", " ", self::POST_TYPE)))),
-                                              'singular_name' => __(ucwords(str_replace("_", " ", self::POST_TYPE)))
-                                          ),
-                                          'public' => true,
-                                          'has_archive' => true,
-                                          'description' => __("A collection of website metric results to give the user a rating of a specific website"),
-                                          'supports' => array(
-                                              'title', 'editor', 'excerpt', 
-                                          ),
-                                      )
-                   );
-               }
+        {
+            register_post_type(self::POST_TYPE,
+                               array(
+                                   'labels' => array(
+                                       'name' => __(sprintf('%ss', ucwords(str_replace("_", " ", self::POST_TYPE)))),
+                                       'singular_name' => __(ucwords(str_replace("_", " ", self::POST_TYPE)))
+                                   ),
+                                   'public' => true,
+                                   'has_archive' => true,
+                                   'description' => __("A collection of website metric results to give the user a rating of a specific website"),
+                                   'supports' => array(
+                                       'title', 'editor', 'excerpt', 
+                                   ),
+                               )
+            );
+        }
 	
         /**
          * Save the metaboxes for this custom post type
