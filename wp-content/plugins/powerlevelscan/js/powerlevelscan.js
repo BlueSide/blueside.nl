@@ -13,25 +13,23 @@ function getAverage(cat)
     return Math.floor(sum / elements.length);
 }
 
-function sortSortbox(id)
-{
-    
-    var people = jQuery("#"+id);
-    peopleli = people.children('.bs-sort-item');
+function sortSortboxes()
+{    
+    jQuery('.bs-sort-box').each(function(i, sortBox){
+	console.log(sortBox);
+	var sortBoxItem = jQuery(sortBox).children('.bs-sort-item');
 
-    peopleli.sort(function(a,b){
-	var an = a.innerHTML,
-	    bn = b.innerHTML;
+	sortBoxItem.sort(function(a,b){
+	    var an = a.innerHTML,
+		bn = b.innerHTML;
 
-	if(an > bn) {
-	    return 1;
-	}
-	if(an < bn) {
-	    return -1;
-	}
-	return 0;
+	    if(an > bn) return 1;
+	    if(an < bn) return -1;
+	    return 0;
+	});
+
+	sortBoxItem.detach().appendTo(sortBox);
     });
-
-    peopleli.detach().appendTo(people);
 }
-console.log(sortSortbox("test"));
+
+sortSortboxes();
