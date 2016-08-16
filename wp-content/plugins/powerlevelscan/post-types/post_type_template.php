@@ -63,6 +63,9 @@ if(!class_exists('Post_Type_Template'))
 
             // Register shortcodes
             add_shortcode( 'bs_pls', array(&$this, 'bs_pls_handler'));
+
+            // Load JavaScript in footer
+            wp_enqueue_script( 'powerlevelscan', WP_CONTENT_URL.'/plugins/powerlevelscan/js/powerlevelscan.js', array('jquery'), null, true);
         }
 
         function bs_pls_handler($attr)
@@ -84,8 +87,6 @@ if(!class_exists('Post_Type_Template'))
                 case 'boolean':
                     $output = $value ? get_option("icon_true") : get_option("icon_false");
                     break;
-                case 'wheel':
-                    break;
                 case 'progress_bar':
                     $output = $this->pls_renderProgressBar($value);
                     break;
@@ -103,7 +104,7 @@ if(!class_exists('Post_Type_Template'))
 
         function pls_getCategoryScore($cat)
         {
-            
+            echo "<script>getCategoryScore($cat);</script>";
             return $result;
         }
         

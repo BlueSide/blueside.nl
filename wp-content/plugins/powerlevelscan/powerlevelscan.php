@@ -63,5 +63,5 @@ if(class_exists('PLS_Main'))
 
 	// instantiate the plugin class
 	$wp_plugin_template = new PLS_Main();
-
+    
 }

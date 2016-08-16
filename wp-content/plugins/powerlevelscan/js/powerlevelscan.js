@@ -12,4 +12,26 @@ function getAverage(cat)
 
     return Math.floor(sum / elements.length);
 }
-console.log(getAverage("performance"));
+
+function sortSortbox(id)
+{
+    
+    var people = jQuery("#"+id);
+    peopleli = people.children('.bs-sort-item');
+
+    peopleli.sort(function(a,b){
+	var an = a.innerHTML,
+	    bn = b.innerHTML;
+
+	if(an > bn) {
+	    return 1;
+	}
+	if(an < bn) {
+	    return -1;
+	}
+	return 0;
+    });
+
+    peopleli.detach().appendTo(people);
+}
+console.log(sortSortbox("test"));
