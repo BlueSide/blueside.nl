@@ -40,10 +40,15 @@
 	    var item = $(this).find('.uk-progress-bar');
 	    var value = parseInt($(item).html(), 10);
 	    
-	    var red = value;
-	    var green = 0;//value;
-	    var blue = 0;//value;
-	    $(item).css('background-image','linear-gradient(to bottom, rgb('+red+','+green+','+blue+'), rgb('+red+','+green+','+blue+'))');
+	    var hue = Math.ceil((value / 100) * 80);
+	    var saturation = 100;
+	    var lightness = 50;//value;
+
+	    $(item).css('background-image',
+			'linear-gradient(to bottom, '+
+			'hsl('+hue+','+saturation+'%,'+lightness+'%),'+ 
+			'hsl('+hue+','+saturation+'%,'+(lightness-10)+'%))'
+		       );
 	});
     }
 
