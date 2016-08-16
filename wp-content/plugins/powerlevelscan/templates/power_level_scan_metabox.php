@@ -5,7 +5,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="scaled_images" name="scaled_images" value="<?php echo @get_post_meta($post->ID, 'scaled_images', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="scaled_images"]
         </td>
     </tr>
     
@@ -15,7 +15,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="optimized_images" name="optimized_images" value="<?php echo @get_post_meta($post->ID, 'optimized_images', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="optimized_images"]
         </td>
     </tr>
     <tr valign="top">
@@ -34,7 +34,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="minify_css" name="minify_css" value="<?php echo @get_post_meta($post->ID, 'minify_css', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="minify_css"]
         </td>
     </tr>
 
@@ -44,7 +44,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="minify_html" name="minify_html" value="<?php echo @get_post_meta($post->ID, 'minify_html', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="minify_html"]
         </td>
     </tr>
 
@@ -54,7 +54,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="minify_javascript" name="minify_javascript" value="<?php echo @get_post_meta($post->ID, 'minify_javascript', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="minify_javascript"]
         </td>
     </tr>
 
@@ -64,7 +64,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="parsing_javascript" name="parsing_javascript" value="<?php echo @get_post_meta($post->ID, 'parsing_javascript', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="parsing_javascript"]
         </td>
     </tr>
 
@@ -74,7 +74,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="query_strings" name="query_strings" value="<?php echo @get_post_meta($post->ID, 'query_strings', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="query_strings"]
         </td>
     </tr>
 
@@ -84,7 +84,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="scripts_styles_order" name="scripts_styles_order" value="<?php echo @get_post_meta($post->ID, 'scripts_styles_order', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="scripts_styles_order"]
         </td>
     </tr>
 
@@ -94,7 +94,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="CSS_import" name="CSS_import" value="<?php echo @get_post_meta($post->ID, 'CSS_import', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="CSS_import"]
         </td>
     </tr>
 
@@ -104,7 +104,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="combine_css" name="combine_css" value="<?php echo @get_post_meta($post->ID, 'combine_css', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="combine_css"]
         </td>
     </tr>
 
@@ -114,7 +114,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="specify_cache" name="specify_cache" value="<?php echo @get_post_meta($post->ID, 'specify_cache', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="specify_cache"]
         </td>
     </tr>
 
@@ -124,7 +124,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="configure_browsercache" name="configure_browsercache" value="<?php echo @get_post_meta($post->ID, 'configure_browsercache', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="configure_browsercache"]
         </td>
     </tr>
 
@@ -134,7 +134,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="specify_charset" name="specify_charset" value="<?php echo @get_post_meta($post->ID, 'specify_charset', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="specify_charset"]
         </td>
     </tr>
 
@@ -144,7 +144,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="bad_requests" name="bad_requests" value="<?php echo @get_post_meta($post->ID, 'bad_requests', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="bad_requests"]
         </td>
     </tr>
 
@@ -154,7 +154,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="landingpage_redirects" name="landingpage_redirects" value="<?php echo @get_post_meta($post->ID, 'landingpage_redirects', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="landingpage_redirects"]
         </td>
     </tr>
 
@@ -164,7 +164,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="Gzip_compression" name="Gzip_compression" value="<?php echo @get_post_meta($post->ID, 'Gzip_compression', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="Gzip_compression"]
         </td>
     </tr>
 
@@ -174,7 +174,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="keep_alive" name="keep_alive" value="<?php echo @get_post_meta($post->ID, 'keep_alive', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="keep_alive"]
         </td>
     </tr>
 
@@ -184,7 +184,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="external_javascript" name="external_javascript" value="<?php echo @get_post_meta($post->ID, 'external_javascript', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="external_javascript"]
         </td>
     </tr>	
 
@@ -194,7 +194,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="redirects" name="redirects" value="<?php echo @get_post_meta($post->ID, 'redirects', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="redirects"]
         </td>
     </tr>	
     
@@ -204,7 +204,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="size_http_requests" name="size_http_requests" value="<?php echo @get_post_meta($post->ID, 'size_http_requests', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="size_http_requests"]
         </td>
     </tr>	
     
@@ -214,7 +214,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="CSS_doc_head" name="CSS_doc_head" value="<?php echo @get_post_meta($post->ID, 'CSS_doc_head', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="CSS_doc_head"]
         </td>
     </tr>	
     
@@ -224,7 +224,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="resources_consistent_url" name="resources_consistent_url" value="<?php echo @get_post_meta($post->ID, 'resources_consistent_url', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="resources_consistent_url"]
         </td>
     </tr>	
     
@@ -234,7 +234,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="accept_encoding_header" name="accept_encoding_header" value="<?php echo @get_post_meta($post->ID, 'accept_encoding_header', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="accept_encoding_header"]
         </td>
     </tr>	
     
@@ -244,7 +244,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="CSS_sprites" name="CSS_sprites" value="<?php echo @get_post_meta($post->ID, 'CSS_sprites', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="CSS_sprites"]
         </td>
     </tr>	
     
@@ -254,7 +254,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="load_asynchronous" name="load_asynchronous" value="<?php echo @get_post_meta($post->ID, 'load_asynchronous', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="load_asynchronous"]
         </td>
     </tr>	
     
@@ -264,7 +264,7 @@
         </th>
         <td>
             <input type="number" min="1" max="100" id="characterset_meta" name="characterset_meta" value="<?php echo @get_post_meta($post->ID, 'characterset_meta', true); ?>" />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="characterset_meta"]
         </td>
     </tr>	
     
@@ -274,7 +274,7 @@
         </th>
         <td>
             <input type="checkbox" id="sitemap" name="sitemap" <?php if(null !== (get_post_meta($post->ID, 'sitemap', true))) echo 'checked'; ?>/>
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="sitemap"]
         </td>
     </tr>
     
@@ -284,7 +284,7 @@
         </th>
         <td>
             <input type="checkbox" id="good_url" name="good_url" <?php if(null !== (get_post_meta($post->ID, 'good_url', true))) echo 'checked'; ?>/>
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="good_url"]
         </td>
     </tr>
     
@@ -294,7 +294,7 @@
         </th>
         <td>
             <input type="checkbox" id="good_h1headers" name="good_h1headers" <?php if(null !== (get_post_meta($post->ID, 'good_h1headers', true))) echo 'checked'; ?> />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="good_h1headers"]
         </td>
     </tr>
     
@@ -304,7 +304,7 @@
         </th>
         <td>
 	    <input type="checkbox" id="good_404" name="good_404" <?php if(null !== (get_post_meta($post->ID, 'good_404', true))) echo 'checked'; ?> />
-	    [bs_pls type="image_resolution"]
+	    [bs_pls type="good_404"]
         </td>
     </tr>
 </table>
