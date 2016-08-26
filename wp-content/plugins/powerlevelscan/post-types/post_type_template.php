@@ -77,9 +77,7 @@ if(!class_exists('Post_Type_Template'))
             
             switch($attr['type'])
             {
-                case 'text':
-                    $output = $value;
-                    break;
+             
                 case 'boolean':
                     $output = $value ? get_option("icon_true") : get_option("icon_false");
                     break;
@@ -88,6 +86,8 @@ if(!class_exists('Post_Type_Template'))
                     break;
                 case 'progress_bar_circle':
                     $output = $this->pls_renderProgressBarCircle($value);
+                    break;
+                case 'text':
                 default:
                     $output = $value;
             }
