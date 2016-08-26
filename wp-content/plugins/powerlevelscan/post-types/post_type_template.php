@@ -74,10 +74,6 @@ if(!class_exists('Post_Type_Template'))
             {
                 $value = get_post_meta(get_the_id(), $attr['scan'], true);
             }
-            else
-            {
-                $value = $this->pls_getCategoryScore($attr['cat']);
-            }
             
             switch($attr['type'])
             {
@@ -90,6 +86,8 @@ if(!class_exists('Post_Type_Template'))
                 case 'progress_bar':
                     $output = $this->pls_renderProgressBar($value);
                     break;
+                case 'progress_bar_circle':
+                    $output = $this->pls_renderProgressBarCircle($value);
                 default:
                     $output = $value;
             }
@@ -102,10 +100,9 @@ if(!class_exists('Post_Type_Template'))
             return str_replace('#VALUE#', $value, get_option('progress_bar'));
         }
 
-        function pls_getCategoryScore($cat)
+        function pls_renderProgressBarCircle($value)
         {
-            echo "<script>getCategoryScore($cat);</script>";
-            return $result;
+            return str_replace('#VALUE#', $value, get_option('progress_bar_circle'));
         }
         
         /**
