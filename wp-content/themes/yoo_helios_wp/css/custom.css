@@ -173,7 +173,7 @@ body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-at
 }
 .tm-grid-icons-helios .tm-icon [class^="tm-icon-helios-"], .tm-grid-icons-helios .tm-icon [class*=" tm-icon-helios-"], .tm-grid-icons-helios .tm-icon [class*='uk-icon-'] {
     z-index: 2;
-    color: #00AFDB;
+    color: #00A1D4;
     font-size: 32px;
     line-height: 79px;
 }
@@ -191,7 +191,7 @@ body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-at
     font-size: 18px;
 }
 .tm-block-primary {
-    background-color: #00AFDB;
+    background-color: #00A1D4;
 }
 .tm-contrast .uk-panel-header, .tm-contrast .uk-panel {
     color: #ffffff;
@@ -200,7 +200,7 @@ body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-at
     color: #ffffff !important;
 }
 .uk-navbar-nav > li.uk-active > a::before {
-    background-image: linear-gradient(to right, #00AFDB, #00AFDB);
+    background-image: linear-gradient(to right, #00A1D4, #00A1D4);
 }
 .uk-navbar-nav > li:hover > a::before, .uk-navbar-nav > li > a:focus::before, .uk-navbar-nav > li.uk-open > a::before {
     background: #00afdb;
@@ -305,7 +305,7 @@ and (max-device-width : 667px) {
 .tm-block-header.tm-contrast div.tm-block-texture, .tm-block-bottom-d.tm-contrast div.tm-block-texture {
     background: url("../../../images/texture/lowpoly.png") repeat;
     background-size: 100%;
-    background-color: #00AFDB;
+    background-color: #00A1D4;
 }
 .ipadcontact {
     text-align: center;
@@ -327,13 +327,13 @@ body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-at
 }
 html .uk-nav.uk-nav-offcanvas > li.uk-active > a {
     color: #ffffff;
-    background-image: linear-gradient(to bottom, #00AFDB, #0096bb);
+    background-image: linear-gradient(to bottom, #00A1D4, #0096bb);
 }
 .uk-nav-offcanvas > li > a {
     font-family: Montserrat;
 }
 a, .uk-link {
-    color: #00afdb;
+    color: #00A1D4;
 }
 ::selection {
     background: #01afdb;
