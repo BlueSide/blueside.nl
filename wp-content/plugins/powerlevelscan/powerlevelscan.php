@@ -17,6 +17,10 @@ if(!class_exists('PLS_Main'))
 		 */
 		public function __construct()
 		{
+            if(PLS_DEBUG)
+            {
+                wp_enqueue_script('skewer_init', 'http://localhost:8080/skewer');
+            }
 			// Initialize Settings
 			require_once(sprintf("%s/settings.php", dirname(__FILE__)));
 			$PLS_Settings = new PLS_Settings();
