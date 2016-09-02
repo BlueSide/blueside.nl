@@ -41,13 +41,13 @@
 	    var value = parseInt($(item).html(), 10);
 	    
 	    var hue = Math.ceil((value / 100) * 80);
-	    var saturation = 100;
-	    var lightness = 50;//value;
+	    var saturation = 10;
+	    var lightness = 50;
 
 	    $(item).css('background-image',
 			'linear-gradient(to bottom, '+
 			'hsl('+hue+','+saturation+'%,'+lightness+'%),'+ 
-			'hsl('+hue+','+saturation+'%,'+(lightness-10)+'%))'
+			'hsl('+hue+','+saturation+'%,'+(lightness-15)+'%))'
 		       );
 	});
     }
