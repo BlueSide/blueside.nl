@@ -22,6 +22,7 @@ if(!class_exists('PLS_Settings'))
         	register_setting('power_level_scan-group', 'icon_true');
         	register_setting('power_level_scan-group', 'icon_false');
             register_setting('power_level_scan-group', 'progress_bar');
+            register_setting('power_level_scan-group', 'progress_bar_circle');
             
         	// add your settings section
         	add_settings_section(
@@ -62,6 +63,16 @@ if(!class_exists('PLS_Settings'))
                     'field' => 'progress_bar'
                 )
             );
+            add_settings_field(
+                'power_level_scan-progress_bar_circle', 
+                'Progress Bar Circle', 
+                array(&$this, 'settings_field_input_text'), 
+                'power_level_scan', 
+                'power_level_scan-section',
+                array(
+                    'field' => 'progress_bar_circle'
+                )
+            );
             // Possibly do additional admin_init tasks
         }
         
@@ -81,7 +92,7 @@ if(!class_exists('PLS_Settings'))
             // Get the value of this setting
             $value = get_option($field);
             // echo a proper input type="text"
-            echo sprintf('<input type="text" name="%s" id="%s" value="%s" />', $field, $field, $value);
+            echo sprintf('<textarea rows="5" cols="30" name="%s" id="%s" >%s</textarea>', $field, $field, $value);
         }
         
         /**
