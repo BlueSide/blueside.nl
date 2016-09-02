@@ -1,5 +1,4 @@
 (function($) {
-
     function sortSortboxes()
     {
 	$('.bs-sort-box').each(function(i, sortBox){
