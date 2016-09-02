@@ -15,22 +15,30 @@
 	return Math.floor(sum / elements.length);
     }
 
+    /**
+     * This function 
+     */
     function sortSortboxes()
-    {    
+    {
 	$('.bs-sort-box').each(function(i, sortBox){
 	    
-	    var sortBoxItem = $(sortBox).children('.bs-sort-item');
-
-	    sortBoxItem.sort(function(a,b){
-		var an = a.innerHTML,
-		    bn = b.innerHTML;
-
+	    var sortBoxItems = $(sortBox).find('.bs-sort-item');
+	    
+	    sortBoxItems.sort(function(a,b){
+		var an = parseInt($(a).find('.bs-sort-value').html(), 10),
+		    bn = parseInt($(b).find('.bs-sort-value').html(), 10);
+		
 		if(an > bn) return 1;
 		if(an < bn) return -1;
 		return 0;
 	    });
 
-	    sortBoxItem.detach().appendTo(sortBox);
+	    sortBoxItems.detach();
+	    
+	    $.each(sortBoxItems, function(i, sortBoxItem) {
+		$(sortBox).append(sortBoxItem);
+	    });
+	    
 	});
     }
 
@@ -41,7 +49,7 @@
 	    var value = parseInt($(item).html(), 10);
 	    
 	    var hue = Math.ceil((value / 100) * 80);
-	    var saturation = 10;
+	    var saturation = 100;
 	    var lightness = 50;
 
 	    $(item).css('background-image',
@@ -52,7 +60,7 @@
 	});
     }
 
-    sortSortboxes();
+    //sortSortboxes();
     colorProgressBars();
     
-})( jQuery );
+})( jQuery )
