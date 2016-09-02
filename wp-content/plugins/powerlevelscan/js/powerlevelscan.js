@@ -1,23 +1,5 @@
 (function($) {
 
-    function getAverage(cat)
-    {
-	var elements = $('div[data-cat="' + cat + '"]').map(function() {
-	    return $(this).text();
-	}).get();
-
-	var sum = 0;
-	for (var i = 0; i < elements.length; i++)
-	{
-	    sum += parseInt(elements[i], 10);
-	}
-
-	return Math.floor(sum / elements.length);
-    }
-
-    /**
-     * This function 
-     */
     function sortSortboxes()
     {
 	$('.bs-sort-box').each(function(i, sortBox){
@@ -60,7 +42,28 @@
 	});
     }
 
-    //sortSortboxes();
+    function getAverage(cat)
+    {
+	var elements = $('[data-cat="' + cat + '"]').map(function() {
+	    return $(this).text();
+	}).get();
+
+	var sum = 0;
+	for (var i = 0; i < elements.length; i++)
+	{
+	    sum += parseInt(elements[i], 10);
+	}
+
+	return Math.floor(sum / elements.length);
+    }
+
+    function getCategoryScore()
+    {
+	return "33";
+    }
+    
+    sortSortboxes();
     colorProgressBars();
+    getCategoryScore();
     
 })( jQuery )

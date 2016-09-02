@@ -76,11 +76,17 @@ if(!class_exists('Post_Type_Template'))
 
         function bs_pls_handler($attr)
         {
+            // Fetch scan type
             if($attr['scan'] !== 'result')
             {
                 $value = get_post_meta(get_the_id(), $attr['scan'], true);
             }
-            
+            else
+            {
+                $value = $this->pls_getCategoryScore($attr['cat']);
+            }
+
+            // Fetch graphic type
             switch($attr['type'])
             {
              
