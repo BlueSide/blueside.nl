@@ -39,7 +39,13 @@ if(!class_exists('Post_Type_Template'))
             sitemap,
             good_url,
             good_h1headers,
-            good_404,
+            breadcrumbs,
+            link_authority,
+            seo_titles,
+            meta_descriptions,
+            meta_keywords,
+            meta_descriptions_images,
+            text_per_page,
         );
 	
         /**

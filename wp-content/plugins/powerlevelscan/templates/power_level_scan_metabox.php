@@ -300,11 +300,71 @@
     
     <tr valign="top">
         <th class="metabox_label_column">
-            <label for="good_404">Goede 404 pagina</label>
+            <label for="breadcrumbs">Breadcrumbs aanwezig</label>
         </th>
         <td>
-	    <input type="checkbox" id="good_404" name="good_404" <?php if(null !== (get_post_meta($post->ID, 'good_404', true))) echo 'checked'; ?> />
-	    [bs_pls scan="good_404"]
+	    <input type="checkbox" id="breadcrumbs" name="breadcrumbs" <?php if(null !== (get_post_meta($post->ID, 'breadcrumbs', true))) echo 'checked'; ?> />
+	    [bs_pls scan="breadcrumbs"]
         </td>
+    </tr>
+
+    <tr valign="top">
+        <th class="metabox_label_column">
+            <label for="link_authority">Link authority</label>
+        </th>
+        <td>
+	    <input type="checkbox" id="link_authority" name="link_authority" <?php if(null !== (get_post_meta($post->ID, 'link_authority', true))) echo 'checked'; ?> />
+	    [bs_pls scan="link_authority"]
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th class="metabox_label_column">
+            <label for="seo_titles">SEO titels</label>
+        </th>
+        <td>
+	    <input type="checkbox" id="seo_titles" name="seo_titles" <?php if(null !== (get_post_meta($post->ID, 'seo_titles', true))) echo 'checked'; ?> />
+	    [bs_pls scan="seo_titles"]
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th class="metabox_label_column">
+            <label for="meta_descriptions">Meta omschrijvingen teksten</label>
+        </th>
+        <td>
+	    <input type="checkbox" id="meta_descriptions" name="meta_descriptions" <?php if(null !== (get_post_meta($post->ID, 'meta_descriptions', true))) echo 'checked'; ?> />
+	    [bs_pls scan="meta_descriptions"]
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th class="metabox_label_column">
+            <label for="meta_keywords">Meta keywords</label>
+        </th>
+        <td>
+	    <input type="checkbox" id="meta_keywords" name="meta_keywords" <?php if(null !== (get_post_meta($post->ID, 'meta_keywords', true))) echo 'checked'; ?> />
+	    [bs_pls scan="meta_keywords"]
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th class="metabox_label_column">
+            <label for="meta_descriptions_images">Meta omschrijving afbeeldingen</label>
+        </th>
+        <td>
+	    <input type="checkbox" id="meta_descriptions_images" name="meta_descriptions_images" <?php if(null !== (get_post_meta($post->ID, 'meta_descriptions_images', true))) echo 'checked'; ?> />
+	    [bs_pls scan="meta_descriptions_images"]
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th class="metabox_label_column">
+            <label for="text_per_page">Genoeg tekst per pagina</label>
+        </th>
+        <td>
+            <input type="checkbox" id="text_per_page" name="" <?php if(null !== (get_post_meta($post->ID, 'text_per_page', true))) echo 'checked'; ?> />
+	    [bs_pls scan="text_per_page"]
+	</td>
     </tr>
 </table>
