@@ -41,6 +41,16 @@
 	});
     }
 
+    function colorBooleans()
+    {
+	console.log('asdf');
+	$('.uk-accordion-title').each(function(){
+	    console.log('test');
+	    $(this).find('i[class="uk-icon-check"]').parent().addClass('bs-groenbalk');
+	    $(this).find('i[class="uk-icon-close"]').parent().addClass('bs-rodebalk');
+	});
+    }
+
     function getAverage(cat)
     {
 	var elements = $('[data-cat="' + cat + '"]').map(function() {
@@ -63,6 +73,7 @@
     
     sortSortboxes();
     colorProgressBars();
+    colorBooleans();
     getCategoryScore();
     
 })( jQuery )
