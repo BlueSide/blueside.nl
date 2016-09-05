@@ -103,18 +103,23 @@ if(!class_exists('Post_Type_Template'))
                 default:
                     $output = $value;
             }
-      
+
+            // Parse shortcodes in shortcode (yo dawg...)
+            $output = do_shortcode($output);
             return $output;
         }
 
         function pls_renderProgressBar($value)
         {
+            //echo $value;
             return str_replace('#VALUE#', $value, get_option('progress_bar'));
         }
 
         function pls_renderProgressBarCircle($value)
         {
-            return str_replace('#VALUE#', $value, get_option('progress_bar_circle'));
+            //echo $value;
+            $in = get_option('progress_bar_circle');
+            return (string)str_replace('#VALUE#', $value, $in);
         }
         
         /**
@@ -198,3 +203,6 @@ if(!class_exists('Post_Type_Template'))
 
     }
 }
+
+
+//<div id="ccprogress-3" data-dimension="150" data-text="27%" data-info="" data-width="10" data-fontsize="25" data-percent="27" data-fgcolor="#767676" data-bgcolor="#D9D9D9" data-fill="#f9f9f9" data-type="full" data-border="outline" class="circliful" style="width: 150px;"><span class="circle-text" style="line-height: 150px; font-size: 25px;">27%</span><span class="circle-info" style="line-height: 187.5px;"></span><canvas width="150" height="150"></canvas><span class="circle-text" style="line-height: 150px; font-size: 25px;">27%</span><span class="circle-info" style="line-height: 187.5px;"></span><canvas width="150" height="150"></canvas><span class="circle-text" style="line-height: 150px; font-size: 25px;">27%</span><span class="circle-info" style="line-height: 187.5px;"></span><canvas width="150" height="150"></canvas></div>
