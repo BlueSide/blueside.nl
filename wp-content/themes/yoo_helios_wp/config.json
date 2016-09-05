@@ -766,12 +766,12 @@
 				}
 			},
 			"assignment": {
-				"0": "page-981",
-				"1": "page-1116",
-				"2": "page-1123",
-				"3": "page-975",
-				"4": "page-1104",
-				"5": "page-1170",
+				"0": "page-1346",
+				"1": "page-981",
+				"2": "page-1116",
+				"3": "page-1123",
+				"4": "page-975",
+				"5": "page-1104",
 				"6": "page-971"
 			}
 		},
@@ -1037,8 +1037,7 @@
 			"title": "0",
 			"assignment": {
 				"0": "",
-				"1": "page-1104",
-				"2": "page-1170"
+				"1": "page-1104"
 			},
 			"class": "",
 			"panel": "",
@@ -1115,6 +1114,25 @@
 			"assignment": {
 				"0": "",
 				"1": "page-1123"
+			},
+			"class": "",
+			"panel": "",
+			"icon": "",
+			"badge": {
+				"type": "uk-panel-badge uk-badge",
+				"text": ""
+			},
+			"display": {
+				"large": "1",
+				"medium": "1",
+				"small": "1"
+			}
+		},
+		"widgetkit-26": {
+			"title": "0",
+			"assignment": {
+				"0": "",
+				"1": "page-1346"
 			},
 			"class": "",
 			"panel": "",

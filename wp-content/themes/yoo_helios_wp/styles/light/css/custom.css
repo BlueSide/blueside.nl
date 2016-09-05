@@ -534,16 +534,29 @@ and (min-device-width : 1620px) {
     padding-top: 50px;
     margin-top: -30px;
 }
-.uk-accordion-title:hover {
+.bs-groenbalk:hover {
     border-color: #fdfdfd;
     background: #fdfdfd;
     box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0), 1px 1px 1px rgba(0, 0, 0, 0);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0);
-    background: #d0d0d0;
-    background: -webkit-linear-gradient(#dcdcdc, #c1c1c1);
-    background: -o-linear-gradient(#dcdcdc, #c1c1c1);
-    background: -moz-linear-gradient(#dcdcdc, #c1c1c1);
-    background: linear-gradient(#dcdcdc, #c1c1c1);
+    background: #325f00;
+    background: -webkit-linear-gradient(#366400, #2b5400);
+    background: -o-linear-gradient(#366400, #2b5400);
+    background: -moz-linear-gradient(#366400, #2b5400);
+    background: linear-gradient(#366400, #2b5400);
+    color: #fff;
+}
+.bs-rodebalk:hover {
+    border-color: #9b000e;
+    background: #8a000d;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0), 1px 1px 1px rgba(0, 0, 0, 0);
+    color: #222222;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0);
+    background: -webkit-linear-gradient(#7d000c,#5e0009);
+    background: -o-linear-gradient(#7d000c,#5e0009);
+    background: -moz-linear-gradient(#7d000c,#5e0009);
+    background: linear-gradient(#7d000c,#5e0009);
+    color: #fff;
 }
 .uk-accordion-title {
     margin-top: 0;
@@ -606,4 +619,17 @@ i.uk-icon-close {
     padding: 19px;
     background-color: #f6f6f6;
     padding-bottom: 0px;
+}
+.bs-dienstenpaginas {
+    margin-top: -25px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+.uk-article-meta {
+    display: none;
+}
+.bs-achtergrond-padding {
+    box-shadow: 1px 3px 2px 1px #cbcbcb;
+    padding: 19px;
+    background-color: #f6f6f6;
 }
