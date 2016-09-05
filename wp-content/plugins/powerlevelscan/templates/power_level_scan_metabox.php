@@ -363,7 +363,7 @@
             <label for="text_per_page">Genoeg tekst per pagina</label>
         </th>
         <td>
-            <input type="checkbox" id="text_per_page" name="" <?php if(null !== (get_post_meta($post->ID, 'text_per_page', true))) echo 'checked'; ?> />
+            <input type="checkbox" id="text_per_page" name="text_per_page" <?php if(null !== (get_post_meta($post->ID, 'text_per_page', true))) echo 'checked'; ?> />
 	    [bs_pls scan="text_per_page"]
 	</td>
     </tr>

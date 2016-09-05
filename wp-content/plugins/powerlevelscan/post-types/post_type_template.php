@@ -74,7 +74,7 @@ if(!class_exists('Post_Type_Template'))
             wp_enqueue_script( 'powerlevelscan', WP_CONTENT_URL.'/plugins/powerlevelscan/js/powerlevelscan.js', array('jquery'), null, true);
         }
 
-        function bs_pls_handler($attr)
+        function bs_pls_handler($attr, $content = null)
         {
             // Fetch scan type
             if($attr['scan'] !== 'result')
@@ -94,10 +94,10 @@ if(!class_exists('Post_Type_Template'))
                     $output = $value ? get_option("icon_true") : get_option("icon_false");
                     break;
                 case 'progress_bar':
-                    $output = $this->pls_renderProgressBar($value);
+                    $output = $this->pls_renderProgressBar($value, $content);
                     break;
                 case 'progress_bar_circle':
-                    $output = $this->pls_renderProgressBarCircle($value);
+                    $output = $this->pls_renderProgressBarCircle($value, $content);
                     break;
                 case 'text':
                 default:
@@ -109,17 +109,15 @@ if(!class_exists('Post_Type_Template'))
             return $output;
         }
 
-        function pls_renderProgressBar($value)
+        function pls_renderProgressBar($value, $content)
         {
-            //echo $value;
             return str_replace('#VALUE#', $value, get_option('progress_bar'));
         }
 
-        function pls_renderProgressBarCircle($value)
+        function pls_renderProgressBarCircle($value, $content)
         {
-            //echo $value;
-            $in = get_option('progress_bar_circle');
-            return (string)str_replace('#VALUE#', $value, $in);
+            $input = get_option('progress_bar_circle');
+            return (string)str_replace('#VALUE#', $value, $input);
         }
         
         /**
