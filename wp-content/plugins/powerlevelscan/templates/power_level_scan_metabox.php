@@ -7,7 +7,7 @@
         <td>
             <input type="number" min="1" max="100" id="scaled_images" name="scaled_images" value="<?php echo @get_post_meta($post->ID, 'scaled_images', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="scaled_images"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="scaled_images"]</td>
     </tr>
     
     <tr valign="top">
@@ -17,7 +17,7 @@
         <td>
             <input type="number" min="1" max="100" id="optimized_images" name="optimized_images" value="<?php echo @get_post_meta($post->ID, 'optimized_images', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="optimized_images"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="optimized_images"]</td>
     </tr>
 
     <tr valign="top">
@@ -27,7 +27,7 @@
         <td>
             <input type="number" min="1" max="100" id="image_resolution" name="image_resolution" value="<?php echo @get_post_meta($post->ID, 'image_resolution', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="image_resolution"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="image_resolution"]</td>
     </tr>
     
     <tr valign="top">
@@ -37,7 +37,7 @@
         <td>
             <input type="number" min="1" max="100" id="minify_css" name="minify_css" value="<?php echo @get_post_meta($post->ID, 'minify_css', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="minify_css"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="minify_css"]</td>
     </tr>
 
     <tr valign="top">
@@ -47,7 +47,7 @@
         <td>
             <input type="number" min="1" max="100" id="minify_html" name="minify_html" value="<?php echo @get_post_meta($post->ID, 'minify_html', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="minify_html"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="minify_html"]</td>
     </tr>
 
     <tr valign="top">
@@ -57,7 +57,7 @@
         <td>
             <input type="number" min="1" max="100" id="minify_javascript" name="minify_javascript" value="<?php echo @get_post_meta($post->ID, 'minify_javascript', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="minify_javascript"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="minify_javascript"]</td>
     </tr>
 
     <tr valign="top">
@@ -67,7 +67,7 @@
         <td>
             <input type="number" min="1" max="100" id="parsing_javascript" name="parsing_javascript" value="<?php echo @get_post_meta($post->ID, 'parsing_javascript', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="parsing_javascript"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="parsing_javascript"]</td>
     </tr>
 
     <tr valign="top">
@@ -77,7 +77,7 @@
         <td>
             <input type="number" min="1" max="100" id="query_strings" name="query_strings" value="<?php echo @get_post_meta($post->ID, 'query_strings', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="query_strings"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="query_strings"]</td>
     </tr>
 
     <tr valign="top">
@@ -87,7 +87,7 @@
         <td>
             <input type="number" min="1" max="100" id="scripts_styles_order" name="scripts_styles_order" value="<?php echo @get_post_meta($post->ID, 'scripts_styles_order', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="scripts_styles_order"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="scripts_styles_order"]</td>
     </tr>
 
     <tr valign="top">
@@ -97,7 +97,7 @@
         <td>
             <input type="number" min="1" max="100" id="CSS_import" name="CSS_import" value="<?php echo @get_post_meta($post->ID, 'CSS_import', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="CSS_import"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="CSS_import"]</td>
     </tr>
 
     <tr valign="top">
@@ -107,7 +107,7 @@
         <td>
             <input type="number" min="1" max="100" id="combine_css" name="combine_css" value="<?php echo @get_post_meta($post->ID, 'combine_css', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="combine_css"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="combine_css"]</td>
     </tr>
 
     <tr valign="top">
@@ -117,7 +117,7 @@
         <td>
             <input type="number" min="1" max="100" id="specify_cache" name="specify_cache" value="<?php echo @get_post_meta($post->ID, 'specify_cache', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="specify_cache"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="specify_cache"]</td>
     </tr>
 
     <tr valign="top">
@@ -127,7 +127,7 @@
         <td>
             <input type="number" min="1" max="100" id="configure_browsercache" name="configure_browsercache" value="<?php echo @get_post_meta($post->ID, 'configure_browsercache', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="configure_browsercache"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="configure_browsercache"]</td>
     </tr>
 
     <tr valign="top">
@@ -137,7 +137,7 @@
         <td>
             <input type="number" min="1" max="100" id="specify_charset" name="specify_charset" value="<?php echo @get_post_meta($post->ID, 'specify_charset', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="specify_charset"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="specify_charset"]</td>
     </tr>
 
     <tr valign="top">
@@ -147,7 +147,7 @@
         <td>
             <input type="number" min="1" max="100" id="bad_requests" name="bad_requests" value="<?php echo @get_post_meta($post->ID, 'bad_requests', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="bad_requests"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="bad_requests"]</td>
     </tr>
 
     <tr valign="top">
@@ -157,7 +157,7 @@
         <td>
             <input type="number" min="1" max="100" id="landingpage_redirects" name="landingpage_redirects" value="<?php echo @get_post_meta($post->ID, 'landingpage_redirects', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="landingpage_redirects"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="landingpage_redirects"]</td>
     </tr>
 
     <tr valign="top">
@@ -167,7 +167,7 @@
         <td>
             <input type="number" min="1" max="100" id="Gzip_compression" name="Gzip_compression" value="<?php echo @get_post_meta($post->ID, 'Gzip_compression', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="Gzip_compression"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="Gzip_compression"]</td>
     </tr>
 
     <tr valign="top">
@@ -177,7 +177,7 @@
         <td>
             <input type="number" min="1" max="100" id="keep_alive" name="keep_alive" value="<?php echo @get_post_meta($post->ID, 'keep_alive', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="keep_alive"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="keep_alive"]</td>
     </tr>
 
     <tr valign="top">
@@ -187,7 +187,7 @@
         <td>
             <input type="number" min="1" max="100" id="external_javascript" name="external_javascript" value="<?php echo @get_post_meta($post->ID, 'external_javascript', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="external_javascript"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="external_javascript"]</td>
     </tr>	
 
     <tr valign="top">
@@ -197,7 +197,7 @@
         <td>
             <input type="number" min="1" max="100" id="redirects" name="redirects" value="<?php echo @get_post_meta($post->ID, 'redirects', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="redirects"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="redirects"]</td>
     </tr>	
     
     <tr valign="top">
@@ -207,7 +207,7 @@
         <td>
             <input type="number" min="1" max="100" id="size_http_requests" name="size_http_requests" value="<?php echo @get_post_meta($post->ID, 'size_http_requests', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="size_http_requests"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="size_http_requests"]</td>
     </tr>	
     
     <tr valign="top">
@@ -217,7 +217,7 @@
         <td>
             <input type="number" min="1" max="100" id="CSS_doc_head" name="CSS_doc_head" value="<?php echo @get_post_meta($post->ID, 'CSS_doc_head', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="CSS_doc_head"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="CSS_doc_head"]</td>
     </tr>	
     
     <tr valign="top">
@@ -227,7 +227,7 @@
         <td>
             <input type="number" min="1" max="100" id="resources_consistent_url" name="resources_consistent_url" value="<?php echo @get_post_meta($post->ID, 'resources_consistent_url', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="resources_consistent_url"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="resources_consistent_url"]</td>
     </tr>	
     
     <tr valign="top">
@@ -237,7 +237,7 @@
         <td>
             <input type="number" min="1" max="100" id="accept_encoding_header" name="accept_encoding_header" value="<?php echo @get_post_meta($post->ID, 'accept_encoding_header', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="accept_encoding_header"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="accept_encoding_header"]</td>
     </tr>	
     
     <tr valign="top">
@@ -247,7 +247,7 @@
         <td>
             <input type="number" min="1" max="100" id="CSS_sprites" name="CSS_sprites" value="<?php echo @get_post_meta($post->ID, 'CSS_sprites', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="CSS_sprites"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="CSS_sprites"]</td>
     </tr>	
     
     <tr valign="top">
@@ -257,7 +257,7 @@
         <td>
             <input type="number" min="1" max="100" id="load_asynchronous" name="load_asynchronous" value="<?php echo @get_post_meta($post->ID, 'load_asynchronous', true); ?>" />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="load_asynchronous"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="load_asynchronous"]</td>
     </tr>	
     
     <tr valign="top">
@@ -267,7 +267,7 @@
         <td>
             <input type="number" min="1" max="100" id="characterset_meta" name="characterset_meta" value="<?php echo @get_post_meta($post->ID, 'characterset_meta', true); ?>" />
         </td>
-	<td style="padding-left: 30px; padding-bottom: 40px"">[bs_pls scan="characterset_meta"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="characterset_meta"]</td>
     </tr>	
     
     <tr valign="top">
@@ -277,7 +277,7 @@
         <td>
             <input type="checkbox" id="sitemap" name="sitemap" <?php if(null !== (get_post_meta($post->ID, 'sitemap', true))) echo 'checked'; ?>/>
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="sitemap"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="sitemap"]</td>
     </tr>
     
     <tr valign="top">
@@ -287,7 +287,7 @@
         <td>
             <input type="checkbox" id="good_url" name="good_url" <?php if(null !== (get_post_meta($post->ID, 'good_url', true))) echo 'checked'; ?>/>
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="good_url"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="good_url"]</td>
     </tr>
     
     <tr valign="top">
@@ -297,7 +297,7 @@
         <td>
             <input type="checkbox" id="good_h1headers" name="good_h1headers" <?php if(null !== (get_post_meta($post->ID, 'good_h1headers', true))) echo 'checked'; ?> />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="good_h1headers"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="good_h1headers"]</td>
     </tr>
     
     <tr valign="top">
@@ -307,7 +307,7 @@
         <td>
 	    <input type="checkbox" id="breadcrumbs" name="breadcrumbs" <?php if(null !== (get_post_meta($post->ID, 'breadcrumbs', true))) echo 'checked'; ?> />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="breadcrumbs"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="breadcrumbs"]</td>
     </tr>
 
     <tr valign="top">
@@ -317,7 +317,7 @@
         <td>
 	    <input type="checkbox" id="link_authority" name="link_authority" <?php if(null !== (get_post_meta($post->ID, 'link_authority', true))) echo 'checked'; ?> />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="link_authority"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="link_authority"]</td>
     </tr>
 
     <tr valign="top">
@@ -327,7 +327,7 @@
         <td>
 	    <input type="checkbox" id="seo_titles" name="seo_titles" <?php if(null !== (get_post_meta($post->ID, 'seo_titles', true))) echo 'checked'; ?> />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="seo_titles"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="seo_titles"]</td>
     </tr>
 
     <tr valign="top">
@@ -337,7 +337,7 @@
         <td>
 	    <input type="checkbox" id="meta_descriptions" name="meta_descriptions" <?php if(null !== (get_post_meta($post->ID, 'meta_descriptions', true))) echo 'checked'; ?> />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="meta_descriptions"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="meta_descriptions"]</td>
     </tr>
 
     <tr valign="top">
@@ -347,7 +347,7 @@
         <td>
 	    <input type="checkbox" id="meta_keywords" name="meta_keywords" <?php if(null !== (get_post_meta($post->ID, 'meta_keywords', true))) echo 'checked'; ?> />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="meta_keywords"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="meta_keywords"]</td>
     </tr>
 
     <tr valign="top">
@@ -357,7 +357,7 @@
         <td>
 	    <input type="checkbox" id="meta_descriptions_images" name="meta_descriptions_images" <?php if(null !== (get_post_meta($post->ID, 'meta_descriptions_images', true))) echo 'checked'; ?> />
         </td>
-	<td style="padding-left: 30px">[bs_pls scan="meta_descriptions_images"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="meta_descriptions_images"]</td>
     </tr>
 
     <tr valign="top">
@@ -367,7 +367,7 @@
         <td>
             <input type="checkbox" id="text_per_page" name="text_per_page" <?php if(null !== (get_post_meta($post->ID, 'text_per_page', true))) echo 'checked'; ?> />
 	</td>
-	<td style="padding-left: 30px; padding-bottom: 40px">[bs_pls scan="text_per_page"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="text_per_page"]</td>
     </tr>
 
     <tr valign="top">
@@ -377,6 +377,6 @@
         <td>
             <input type="number" min="1" max="100" id="usability" name="usability" value="<?php echo @get_post_meta($post->ID, 'usability', true); ?>" />   
 	</td>
-	<td style="padding-left: 30px">[bs_pls scan="usability"]</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="usability"]</td>
     </tr>
 </table>
