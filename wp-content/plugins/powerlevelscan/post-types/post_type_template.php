@@ -9,43 +9,44 @@ if(!class_exists('Post_Type_Template'))
     {
         const POST_TYPE	= "power_level_scan";
         private $_meta	= array(
-            scaled_images,
-            optimized_images,
-            image_resolution,
-            minify_css,
-            minify_html,
-            minify_javascript,
-            parsing_javascript,
-            query_strings,
-            scripts_styles_order,
-            CSS_import,
-            combine_css,
-            specify_cache,
-            configure_browsercache,
-            specify_charset,
-            bad_requests,
-            landingpage_redirects,
-            Gzip_compression,
-            keep_alive,
-            external_javascript,
-            redirects,
-            size_http_requests,
-            CSS_doc_head,
-            resources_consistent_url,
-            accept_encoding_header,
-            CSS_sprites,
-            load_asynchronous,
-            characterset_meta,
-            sitemap,
-            good_url,
-            good_h1headers,
-            breadcrumbs,
-            link_authority,
-            seo_titles,
-            meta_descriptions,
-            meta_keywords,
-            meta_descriptions_images,
-            text_per_page,
+            array(scaled_images, 'performance'),
+            array(optimized_images, 'performance'),
+            array(image_resolution, 'performance'),
+            array(minify_css, 'performance'),
+            array(minify_html, 'performance'),
+            array(minify_javascript, 'performance'),
+            array(parsing_javascript, 'performance'),
+            array(query_strings, 'performance'),
+            array(scripts_styles_order, 'performance'),
+            array(CSS_import, 'performance'),
+            array(combine_css, 'performance'),
+            array(specify_cache, 'performance'),
+            array(configure_browsercache, 'performance'),
+            array(specify_charset, 'performance'),
+            array(bad_requests, 'performance'),
+            array(landingpage_redirects, 'performance'),
+            array(Gzip_compression, 'performance'),
+            array(keep_alive, 'performance'),
+            array(external_javascript, 'performance'),
+            array(redirects, 'performance'),
+            array(size_http_requests, 'performance'),
+            array(CSS_doc_head, 'performance'),
+            array(resources_consistent_url, 'performance'),
+            array(accept_encoding_header, 'performance'),
+            array(CSS_sprites, 'performance'),
+            array(load_asynchronous, 'performance'),
+            array(characterset_meta, 'performance'),
+            array(sitemap, 'findability'),
+            array(good_url, 'findability'),
+            array(good_h1headers, 'findability'),
+            array(breadcrumbs, 'findability'),
+            array(link_authority, 'findability'),
+            array(seo_titles, 'findability'),
+            array(meta_descriptions, 'findability'),
+            array(meta_keywords, 'findability'),
+            array(meta_descriptions_images, 'findability'),
+            array(text_per_page, 'findability'),
+            array(usability),
         );
 	
         /**
@@ -77,36 +78,78 @@ if(!class_exists('Post_Type_Template'))
         function bs_pls_handler($attr, $content = null)
         {
             // Fetch scan type
-            if($attr['scan'] !== 'result')
+            switch($attr['scan'])
             {
+            case "performance":
+                $value = $this->pls_getPerformanceScore();            
+                break;
+            case "findability":
+                $value = $this->pls_getFindabilityScore();
+                break;
+            default:
                 $value = get_post_meta(get_the_id(), $attr['scan'], true);
+                break;
             }
-            else
-            {
-                $value = $this->pls_getCategoryScore($attr['cat']);
-            }
-
             // Fetch graphic type
             switch($attr['type'])
             {
              
-                case 'boolean':
-                    $output = $value ? get_option("icon_true") : get_option("icon_false");
-                    break;
-                case 'progress_bar':
-                    $output = $this->pls_renderProgressBar($value, $content);
-                    break;
-                case 'progress_bar_circle':
-                    $output = $this->pls_renderProgressBarCircle($value, $content);
-                    break;
-                case 'text':
-                default:
-                    $output = $value;
+            case 'boolean':
+                $output = $value ? get_option("icon_true") : get_option("icon_false");
+                break;
+            case 'progress_bar':
+                $output = $this->pls_renderProgressBar($value, $content);
+                break;
+            case 'progress_bar_circle':
+                $output = $this->pls_renderProgressBarCircle($value, $content);
+                break;
+            case 'text':
+            default:
+                $output = $value;
             }
 
             // Parse shortcodes in shortcode (yo dawg...)
             $output = do_shortcode($output);
             return $output;
+        }
+
+        function pls_getPerformanceScore()
+        {
+            $count = 0;
+            $sum = 0;
+            foreach($this->_meta as $field)
+            {
+                if($field[1] === 'performance')
+                {
+                    $count++;
+                    $sum += get_post_meta(get_the_id(), $field[0], true);
+                }
+            }
+            if ($sum != 0)
+                $result = floor($sum / $count);
+            else
+                $result = 0;
+            return $result;
+        }
+
+        function pls_getFindabilityScore()
+        {
+            $count = 0;
+            $sum = 0;
+            foreach($this->_meta as $field)
+            {
+                if($field[1] === 'findability')
+                {
+                    $count++;
+                    if(get_post_meta(get_the_id(), $field[0], true) === 'on')
+                        $sum++;
+                }
+            }
+            if ($sum != 0)
+                $result = floor(($sum / $count) * 100);
+            else
+                $result = 0;
+            return $result;
         }
 
         function pls_renderProgressBar($value, $content)
@@ -158,7 +201,7 @@ if(!class_exists('Post_Type_Template'))
                 foreach($this->_meta as $field_name)
                 {
                     // Update the post's meta field
-                    update_post_meta($post_id, $field_name, $_POST[$field_name]);
+                    update_post_meta($post_id, $field_name[0], $_POST[$field_name[0]]);
                 }
             }
             else
@@ -174,6 +217,7 @@ if(!class_exists('Post_Type_Template'))
         {			
             // Add metaboxes
             add_action('add_meta_boxes', array(&$this, 'add_meta_boxes'));
+            echo wp_enqueue_style('pls_editor_style', plugins_url('/../css/editor-style.css', __FILE__));
         }
 	
         /**
@@ -201,6 +245,3 @@ if(!class_exists('Post_Type_Template'))
 
     }
 }
-
-
-//<div id="ccprogress-3" data-dimension="150" data-text="27%" data-info="" data-width="10" data-fontsize="25" data-percent="27" data-fgcolor="#767676" data-bgcolor="#D9D9D9" data-fill="#f9f9f9" data-type="full" data-border="outline" class="circliful" style="width: 150px;"><span class="circle-text" style="line-height: 150px; font-size: 25px;">27%</span><span class="circle-info" style="line-height: 187.5px;"></span><canvas width="150" height="150"></canvas><span class="circle-text" style="line-height: 150px; font-size: 25px;">27%</span><span class="circle-info" style="line-height: 187.5px;"></span><canvas width="150" height="150"></canvas><span class="circle-text" style="line-height: 150px; font-size: 25px;">27%</span><span class="circle-info" style="line-height: 187.5px;"></span><canvas width="150" height="150"></canvas></div>
