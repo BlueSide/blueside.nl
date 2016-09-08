@@ -81,10 +81,10 @@ if(!class_exists('Post_Type_Template'))
             switch($attr['scan'])
             {
             case "performance":
-                $value = $this->pls_getPerformanceScore();            
+                $value = $this->pls_getPerformanceScore();
                 break;
             case "findability":
-                $value = $this->pls_getFindabilityScore();
+                $value = $this->pls_getFindabilityScore();                
                 break;
             default:
                 $value = get_post_meta(get_the_id(), $attr['scan'], true);

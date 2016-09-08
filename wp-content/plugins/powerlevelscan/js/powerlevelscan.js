@@ -29,7 +29,7 @@
 	    var item = $(this).find('.uk-progress-bar');
 	    var value = parseInt($(item).html(), 10);
 
-	    
+	    // 
 	    if(value > 50)
 	    {
 		var hue = (value - 50) * 2;
@@ -38,8 +38,7 @@
 	    {
 		var hue = 0;
 	    }
-	    //var hue = Math.ceil((value / 100 ) * 80);
-	    console.log(hue);
+
 	    var saturation = 100;
 	    var lightness = 50;
 
@@ -73,9 +72,15 @@
 
 	return Math.floor(sum / elements.length);
     }
+
+    function bsAwesomeness()
+    {
+	console.log($('.chart[data-percent=100]').html(">9000!"));
+    }
     
     sortSortboxes();
     colorProgressBars();
     colorBooleans();
+    bsAwesomeness();
     
-})( jQuery )
+})(jQuery)
