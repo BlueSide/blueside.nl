@@ -28,8 +28,18 @@
 	$('.uk-progress').each(function(){
 	    var item = $(this).find('.uk-progress-bar');
 	    var value = parseInt($(item).html(), 10);
+
 	    
-	    var hue = Math.ceil((value / 100) * 80);
+	    if(value > 50)
+	    {
+		var hue = (value - 50) * 2;
+	    }
+	    else
+	    {
+		var hue = 0;
+	    }
+	    //var hue = Math.ceil((value / 100 ) * 80);
+	    console.log(hue);
 	    var saturation = 100;
 	    var lightness = 50;
 
@@ -43,9 +53,7 @@
 
     function colorBooleans()
     {
-	console.log('asdf');
 	$('.uk-accordion-title').each(function(){
-	    console.log('test');
 	    $(this).find('i[class="uk-icon-check"]').parent().addClass('bs-groenbalk');
 	    $(this).find('i[class="uk-icon-close"]').parent().addClass('bs-rodebalk');
 	});
@@ -65,15 +73,9 @@
 
 	return Math.floor(sum / elements.length);
     }
-
-    function getCategoryScore()
-    {
-	return "33";
-    }
     
     sortSortboxes();
     colorProgressBars();
     colorBooleans();
-    getCategoryScore();
     
 })( jQuery )
