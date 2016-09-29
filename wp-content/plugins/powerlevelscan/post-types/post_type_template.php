@@ -47,6 +47,7 @@ if(!class_exists('Post_Type_Template'))
             array(meta_descriptions_images, 'findability'),
             array(text_per_page, 'findability'),
             array(usability),
+            array(performance),
         );
 	
         /**
@@ -80,9 +81,11 @@ if(!class_exists('Post_Type_Template'))
             // Fetch scan type
             switch($attr['scan'])
             {
+                /*
             case "performance":
                 $value = $this->pls_getPerformanceScore();            
                 break;
+                */
             case "findability":
                 $value = $this->pls_getFindabilityScore();
                 break;

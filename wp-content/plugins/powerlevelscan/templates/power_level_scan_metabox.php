@@ -379,4 +379,14 @@
 	</td>
 	<td class="metabox_label_shortcode">[bs_pls scan="usability"]</td>
     </tr>
+
+    <tr valign="top">
+        <th class="metabox_label_column">
+            <label for="performance">Performance Score</label>
+        </th>
+        <td>
+            <input type="number" min="1" max="100" id="performance" name="performance" value="<?php echo @get_post_meta($post->ID, 'performance', true); ?>" />   
+	</td>
+	<td class="metabox_label_shortcode">[bs_pls scan="performance"]</td>
+    </tr>
 </table>
