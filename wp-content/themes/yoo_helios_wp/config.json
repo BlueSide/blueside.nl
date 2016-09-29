@@ -277,8 +277,8 @@
 					"block-container": "tm-container-100"
 				},
 				"top-a": {
-					"block-bg": " tm-block-gradient",
-					"block-texture": "tm-block-texture tm-block-wall",
+					"block-bg": " tm-block-primary tm-contrast",
+					"block-texture": "tm-block-texture tm-block-lowpoly",
 					"block-padding": " tm-block-padding",
 					"block-container": "tm-container-80"
 				},
@@ -766,9 +766,9 @@
 				}
 			},
 			"assignment": {
-				"0": "page-1346",
-				"1": "page-981",
-				"2": "page-1116",
+				"0": "page-981",
+				"1": "page-1116",
+				"2": "page-1346",
 				"3": "page-1123",
 				"4": "page-975",
 				"5": "page-1104",
@@ -962,6 +962,25 @@
 			"title": "0",
 			"assignment": {
 				"0": ""
+			},
+			"class": "",
+			"panel": "",
+			"icon": "",
+			"badge": {
+				"type": "uk-panel-badge uk-badge",
+				"text": ""
+			},
+			"display": {
+				"large": "1",
+				"medium": "1",
+				"small": "1"
+			}
+		},
+		"text-136": {
+			"title": "0",
+			"assignment": {
+				"0": "",
+				"1": "front_page"
 			},
 			"class": "",
 			"panel": "",
@@ -1262,7 +1281,7 @@
 			}
 		},
 		"text-135": {
-			"title": "1",
+			"title": "0",
 			"assignment": {
 				"0": "",
 				"1": "page-778"
@@ -1285,44 +1304,6 @@
 			"assignment": {
 				"0": "",
 				"1": "front_page"
-			},
-			"class": "",
-			"panel": "",
-			"icon": "",
-			"badge": {
-				"type": "uk-panel-badge uk-badge",
-				"text": ""
-			},
-			"display": {
-				"large": "1",
-				"medium": "1",
-				"small": "1"
-			}
-		},
-		"text-96": {
-			"title": "0",
-			"assignment": {
-				"0": "",
-				"1": "page-782"
-			},
-			"class": "",
-			"panel": "",
-			"icon": "",
-			"badge": {
-				"type": "uk-panel-badge uk-badge",
-				"text": ""
-			},
-			"display": {
-				"large": "1",
-				"medium": "1",
-				"small": "1"
-			}
-		},
-		"text-100": {
-			"title": "0",
-			"assignment": {
-				"0": "",
-				"1": "page-782"
 			},
 			"class": "",
 			"panel": "",

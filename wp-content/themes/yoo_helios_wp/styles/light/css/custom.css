@@ -273,6 +273,7 @@ and (orientation : landscape) {
     font-weight: bold;
     font-size: 14px;
     padding-top: 3px;
+	margin-left: 0px;
 }
 .tm-block-footer {
     padding-top: 20px;
@@ -282,6 +283,36 @@ and (orientation : landscape) {
     letter-spacing: 1px;
     color: #888888;
     font-size: 14px;
+}
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+.bs-div-powerlevelform {
+    padding-left: 10px;
+	padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    border-radius: 10px;
+    float: left;
+}
+.uk-slideshow-fullscreen, .uk-slideshow-fullscreen > li {
+    max-height: 400px;
+}
+.bs-dienstenpaginas {
+    margin-top: -25px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+h1, .uk-h1 {
+    font-size: 38px;
+    line-height: 44px;
+}
+h4.bs-h4-lessmargin {
+    line-height: 20px;
+    font-size: 16px;
 }
 }
 
@@ -345,6 +376,23 @@ h1, .uk-h1 {
 h3, .uk-h3 {
     font-size: 22px;
     line-height: 24px;
+}
+.bs-dienstenpaginas {
+    margin-top: -25px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+.bs-div-powerlevelform {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    border-radius: 10px;
+    float: left;
+}
+h4.bs-h4-lessmargin {
+    line-height: 14pt;
+    font-size: 14px;
 }
 }
 body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) .uk-navbar-toggle:hover, body:not(.tm-navbar-bg) [class*='tm-block-primary'] .tm-navbar:not(.tm-navbar-attached) .uk-navbar-toggle:focus {
@@ -610,6 +658,8 @@ and (min-device-width : 1620px) {
 }
 i.uk-icon-check {
     color: #ffffff;
+    float: right;
+    margin-top: -8px;
 }
 i.uk-icon-close {
     color: #ffffff;
@@ -632,4 +682,64 @@ i.uk-icon-close {
     box-shadow: 1px 3px 2px 1px #cbcbcb;
     padding: 19px;
     background-color: #f6f6f6;
+}
+p.bs-p-powerlevelform {
+    margin: 0 0 15px 0;
+    margin-top: 10px;
+    color: white;
+}
+input.wpcf7-form-control.wpcf7-submit.uk-button.bs-powerlevelbutton {
+    background-image: linear-gradient(to bottom, #f9f9f9, #f9f9f9);
+    color: black;
+}
+
+.bs-div-powerlevellist {
+    border-radius: 10px;
+    float: left;
+    width: 50%;
+}
+
+@media only screen 
+and (min-device-width : 1024px){
+.bs-div-powerlevelform {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    float: left;
+    display: inline;
+    width: 40%;
+}
+}
+.bs-powerlevelicon {
+    padding-right: 20px;
+    color: #00a1d4;
+}
+.wpcf7-form input,
+.wpcf7-form textarea,
+.wpcf7-form select {
+	width: 98%;
+}
+h4.bs-h4-lessmargin {
+    font-size: 18px;
+}
+.bs-whiteheader {
+    color: #fff;
+}
+div.wpcf7-mail-sent-ok {
+    border: none;
+}
+div.wpcf7-response-output {
+    margin: 0px;
+    padding: 0.2em 1em;
+}
+div.wpcf7-validation-errors {
+    border: none;
+}
+span.wpcf7-not-valid-tip {
+    color: #fff;
+    font-size: 1em;
+    display: block;
+    text-decoration: underline;
 }

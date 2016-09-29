@@ -22,13 +22,13 @@ $this['asset']->addFile('css', 'css:theme.css');
 
 	<div class="uk-vertical-align-middle uk-container-center">
 
-		<i class="tm-error-icon uk-icon-frown-o"></i>
+	    <img src="https://media.giphy.com/media/njYrp176NQsHS/giphy.gif" />
 
-		<h1 class="tm-error-headline"><?php echo $error; ?></h1>
+	    <h1 class="tm-error-headline"><?php echo $error; ?></h1>
 
-		<h2 class="uk-h3 uk-text-muted"><?php echo $title; ?></h2>
+	    <h2 class="uk-h3 uk-text-muted"><?php echo $title; ?></h2>
 
-		<p><?php echo $message; ?></p>
+	    <p><?php echo $message; ?></p>
 
 	</div>
 
